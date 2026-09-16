@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🌦️ Weather Dashboard</h1>
+                <p>Real-time weather information at your fingertips</p>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="btn btn-primary">Search</button>
+            </div>
+            <button id="geoBtn" class="btn btn-secondary">📍 Use My Location</button>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMsg" class="error-message" style="display: none;"></div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+
+        <!-- Main Weather Display -->
+        <div id="weatherContainer" class="weather-container" style="display: none;">
+            <div class="current-weather">
+                <div class="weather-header">
+                    <h2 id="cityName"></h2>
+                    <span id="countryCode" class="country-code"></span>
+                </div>
+                
+                <div class="weather-main">
+                    <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon">
+                    <div class="temperature-section">
+                        <div id="temperature" class="temperature"></div>
+                        <div id="description" class="description"></div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Feels Like</span>
+                        <span id="feelsLike" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Humidity</span>
+                        <span id="humidity" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Wind Speed</span>
+                        <span id="windSpeed" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pressure</span>
+                        <span id="pressure" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Cloud Coverage</span>
+                        <span id="clouds" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Air Quality</span>
+                        <span id="aqi" class="detail-value"></span>
+                    </div>
+                </div>
+
+                <div class="sun-times">
+                    <div class="sun-item">
+                        <span class="sun-label">🌅 Sunrise</span>
+                        <span id="sunrise" class="sun-value"></span>
+                    </div>
+                    <div class="sun-item">
+                        <span class="sun-label">🌇 Sunset</span>
+                        <span id="sunset" class="sun-value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forecast Section -->
+        <div id="forecastContainer" class="forecast-container" style="display: none;">
+            <h3>📅 5-Day Forecast</h3>
+            <div id="forecastList" class="forecast-list"></div>
+        </div>
+
+        <!-- Recent Searches -->
+        <div class="recent-searches">
+            <h3>Recent Searches</h3>
+            <div id="recentList" class="recent-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
